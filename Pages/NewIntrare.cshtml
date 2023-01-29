@@ -1,0 +1,33 @@
+﻿@page
+@model Depozit.Pages.NewIntrareModel
+@{
+<div>
+    <h1>Creeaza o intrare noua: </h1>
+    <form name="intrareNoua" id="formIntrare" method="post">
+        <div style="display:grid; grid-template-columns: repeat(2, 1fr); column-gap: 5px; row-gap: 10px; width:70%"> 
+            <div>
+                Numele produsului:
+            </div>
+            <div>
+                <input name="productName" type="text" class="form-control input-lg" autofocus required />
+            </div>
+            <div>
+                Numele furnizorului:
+            </div>
+            <div>
+                <input name="partnerName" type="text" class="form-control input-lg" autofocus required />
+            </div>
+            <div>
+                Cantitatea:
+            </div>
+            <div>
+                <input type="number" name="quantity" class="form-control input-lg" autofocus required />
+            </div>
+            <div >
+                    <input id="saveButton" type="submit"
+                           value="Salvati" class="btn btn-info" />
+            </div>
+        </div>
+    </form>
+</div>
+}

@@ -1,0 +1,37 @@
+﻿@page
+@model Depozit.Pages.UpdateIntrareModel
+@{
+    <div>
+    <h1>Editeaza intrarea #@Model.intrare.Id: </h1>
+    <form name="updateIntrare" id="formIntrare" method="post">
+        <div style="display:grid; grid-template-columns: repeat(2, 1fr); column-gap: 5px; row-gap: 10px; width:70%"> 
+            <div>
+                Numele produsului:
+            </div>
+            <div>
+                <input name="productName" type="text" class="form-control input-lg" autofocus required 
+                value="@Model.intrare.ProductName"/>
+            </div>
+            <div>
+                Numele furnizorului:
+            </div>
+            <div>
+                <input name="partnerName" type="text" class="form-control input-lg" autofocus required 
+                value="@Model.intrare.PartnerName"/>
+            </div>
+            <div>
+                Cantitatea:
+            </div>
+            <div>
+                <input type="number" name="quantity" class="form-control input-lg" autofocus required 
+                value="@Model.intrare.Quantity"/>
+                <input type="hidden" name="id" value="@Model.intrare.Id" />
+            </div>
+            <div >
+                    <input id="saveButton" type="submit"
+                           value="Salvati" class="btn btn-info" />
+            </div>
+        </div>
+    </form>
+</div>
+}

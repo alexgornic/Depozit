@@ -1,3 +1,5 @@
+using Depozit.Infrastructure;
+using Depozit.Infrastructure.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -24,6 +26,8 @@ namespace Depozit
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddSingleton<IConfiguration>(Configuration);
+            services.AddScoped<IIntrare, IntrareRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

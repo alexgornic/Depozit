@@ -1,0 +1,42 @@
+﻿@page
+@model Depozit.Pages.IntrariModel
+@{
+    ViewData["Title"] = "Intrari";
+    <div>
+        <div style="display:flex; justify-content:space-between; align-items:center; width:100%">
+            <h1>Intrari</h1>
+            <a href="./NewIntrare" class="btn btn-info" role="button">Intrare noua</a>
+        </div>
+        <table class= "table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nume</th>
+                    <th>Furnizor</th>
+                    <th>Data</th>
+                    <th>Cantitate</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var i in Model.intrari)
+                {
+                    <tr>
+                        <td>@i.Id</td>
+                        <td>@i.ProductName</td>
+                        <td>@i.PartnerName</td>
+                        <td>@i.Data.ToShortDateString()</td>
+                        <td>@i.Quantity</td>
+                        <td>
+                            <div class="btn-group">
+                                <a href="/UpdateIntrare?id=@i.Id" class="btn btn-primary" role="button"><i class="bi bi-pencil-fill"></i></a>
+                                <a href="/DeleteIntrare?id=@i.Id" class="btn btn-danger" role="button"><i class="bi bi-trash"></i></a>
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+}
+
